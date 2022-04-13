@@ -41,7 +41,7 @@ if (totalSpent >= 100 && totalSpent < 1000) {
     discount = 0;
 }
 console.log(`Ваш заказ на сумму ${currentPayment} со скидкой ${discount * 100} %`);
-currentPayment = currentPayment - currentPayment * discount;
+currentPayment -= currentPayment * discount;
 console.log('К оплате: ', currentPayment);
 
 
