@@ -162,3 +162,34 @@ result = message.includes('spam') || message.includes('sale');
   return result;
 }
 
+function getTipsRating(amount) {
+  if(amount === 0) {
+    return 'terrible';
+  }
+  if (amount >= 1 && amount <= 10){
+    return 'poor';
+  } 
+  if (amount >= 11 && amount <= 20) {
+    return 'good';
+  }
+  if (amount >=21 && amount <= 50) {
+    return 'great';
+   } 
+   if (amount > 50) {
+     return 'excellent';
+   }
+}
+
+function getLargestExpressionResult(a, b) {
+  let result = a + b;
+ if (result < (a - b)) {
+   result = a - b;
+ } 
+ if (result < a * b ) {
+   result = a * b;
+ }
+ if (result < a / b ) {
+   result = a / b;
+ }
+   return result;
+}
