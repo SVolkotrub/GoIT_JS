@@ -193,3 +193,105 @@ function getLargestExpressionResult(a, b) {
  }
    return result;
 }
+
+function calculateProfit(amount, percent, period) {
+  let profit = amount;
+  for (let i = 0; i < period; i+=1) {
+    profit += profit * percent / 100;
+  }
+  return profit - amount;
+}
+
+//Проверить, что буква большая
+
+function isBigLetter(ch) {
+  const isLetter = ch.toLowerCase() !== ch.toUpperCase();
+  const isBig = ch === ch.toUpperCase();
+  
+  return isLetter && isBig;
+}
+ 
+function search(text, part) {
+  const normalizedText = text.toLowerCase();
+  const normalizedPart = part.toLowerCase();
+  
+  return normalizedText.includes(normalizedPart);
+}
+
+console.log(search('Sveta', 'm'), search('Sveta', 'Sv'));
+
+// Проверить является ли символ буквой
+function isLetter(ch) {
+  return ch.toLowerCase() !== ch.toUpperCase();
+}
+
+
+function countMs(text) {
+  let count = 0;
+  for (let letter of text){
+    if (letter === 'm' || letter === 'M'){
+      count +=1;
+    }
+  }
+  return count;
+}
+
+function removeVowels(doc) {
+  let result = '';
+  for (let letter of doc){
+    if (letter !== 'a' && letter !== 'e' && letter !== 'i' && letter !== 'o' && letter !== 'u' && letter !== 'y' && letter !== 'A' && letter !== 'E' && letter !== 'I' && letter !== 'O' && letter !== 'U' && letter !== 'Y'){
+        result += letter;
+    }
+  }
+  return result;
+}
+
+function makeAbbr(words) {
+  let abbreviation = words.charAt(0);
+  for (let i = 0; i < words.length; i +=1) {
+    if (words.charAt(i) === ' '){
+      abbreviation += words.charAt(i + 1);
+
+    }
+  }
+  return abbreviation.toUpperCase();
+}
+
+function decryptMessage(message) {
+  let result ='';
+  for(let i = message.length - 1; i >= 0; i -= 1) {
+    result += message[i];
+  }
+  return result;
+}
+
+function isWerewolf(target) {
+  let direct = '';
+let reversed = '';
+  
+  for (let letter of target.toLowerCase()) {
+    if (letter.toLowerCase() !== letter.toUpperCase()) {
+        direct += letter;
+      } 
+}
+  for(let i = direct.length - 1; i >= 0; i -= 1) {
+      reversed += direct.charAt(i);
+ }
+ return direct === reversed;
+}
+
+function getSuccessRate(statistic) {
+  let number = Number(statistic.length);
+  let count = 0;
+  for (let ones of statistic){
+    if (ones === '1'){
+      count += 1;
+    }
+  } 
+  let percent = 0;
+
+if (number !== 0) {
+  percent = Math.round((count / number) * 100)
+} else { percent = 0;}
+return percent;
+}
