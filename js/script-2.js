@@ -118,5 +118,44 @@ for (let i = min; i <= max; i += 1) {
 }
 console.log(`Сумма нечетных чисел в диапазоне от ${min} до ${max} равна ${totalSumOdd}`);
 
+// Работа со строками
 
 
+const text = 'My name is Sveta';
+let spacesCount = 0;
+for (let i = 0; i < text.length; i++) {
+  if (text[i] === ' ') {
+    spacesCount++;
+  }
+}
+console.log(spacesCount);
+ let res = '';
+for (let i = 0; i < text.length; i++) {
+  if (text[i] === ' ') {
+        res += '---'; 
+  } else {
+        res += text[i];
+  }
+}
+console.log(result);
+
+// Перебор строки без индекса посимвольно!!
+for (let letter of text) {
+    console.log(letter);
+}
+
+//!!!! перебор строк посимвольно!!
+const word = 'Hello world';
+for (let i = word.length - 1; i >= 0; i -= 1) { 
+    console.log(word[i]);
+}
+ //Убрать пробелы
+const string = 'Do you have any hobbies?';
+let result = '';
+
+for (const char of string) {
+  if (char !== ' ') {
+    result += char;
+  } 
+console.log(result);
+}
