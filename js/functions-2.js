@@ -140,3 +140,110 @@ function compareRobots(firstRobotResults, secondRobotResults) {
     return 'Both robots for sale!';
   }
 }
+/*Напиши функцію splitString, яка приймає рядок і повертає
+ масив рядків з двох символів.
+
+Якщо рядок містить непарну кількість символів, тоді другий символ
+ потрібно замінити на підкреслення (_).*/
+function splitString(str) {
+  const result = [];
+  const tempStr = str.split('');
+  if (tempStr.length % 2 !== 0){
+    tempStr.push('_');
+  } 
+  for (let i = 0; i < tempStr.length; i += 2) {
+    result.push(tempStr[i] + tempStr[i+1]); 
+  }
+  return result;
+}
+/*Створи функцію scrollingText, яка
+
+приймає рядок word;
+послідовно переставляє всі символи у рядку з нульового індексу 
+до останнього;
+повертає масив з усіма отриманими комбінаціями в верхньому регістрі.*/
+function scrollingText(word) {
+  const resultArray = [];
+  resultArray.push(word.toUpperCase());
+  for (let i = 1; i < word.length; i += 1){
+    let strBefore = word.slice(0,i);
+    let strAfter = word.slice(i);
+    let result = strAfter + strBefore;
+    resultArray.push(result.toUpperCase());
+  }
+  return resultArray;
+}
+
+/*Створи функцію isSpecialNumber, яка приймає додатне число
+ n і визначає, чи є воно особливим.
+Число називається особливим, якщо воно включає в себе лише цифри
+ 0, 1, 2, 3, 4 або 5.
+Функція повинна повертати рядок 'Special!!', якщо число особливе, 
+та 'NOT!!', якщо воно таким не є.
+
+Примітка: одноцифрові числа в інтервалі [0:5] вважаються особливими
+ числами.*/
+function isSpecialNumber(n) {
+  let resultStr = '';
+  let newStr = n.toString();
+  const arrayStr = newStr.split('');
+  let check = 0;
+  for (let i = 0; i < arrayStr.length; i += 1){
+
+  if (arrayStr[i] >= 0 && arrayStr[i] <= 5){
+    check += 1;
+  } 
+  }
+  if (check === arrayStr.length){
+    resultStr = 'Special!!';
+  } else {
+    resultStr = 'NOT!!';
+  }
+  return resultStr;
+}
+
+/*Давай перевіримо, чи всі наші числа охайні і всі цифри стоять у
+ правильному порядку - у неспадаючій послідовності.
+
+Створи функцію isTidy, яка приймає позитивне число number і повертає 
+true, якщо його цифри у неспадаючій послідовності, або false, якщо це 
+не так.*/
+
+function isTidy(number) {
+  let newStr = number.toString();
+  const newArray = newStr.split('');
+  for (let i = 1; i < newArray.length; i += 1){
+    if (Number(newArray[i-1]) <= Number(newArray[i])){
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
+
+}
+
+/*Реалізуй функцію isJumping, яка приймає число number та повертає 
+рядок JUMPING, якщо кожна цифра в числі відрізняється від сусідньої
+ на 1. Якщо умова не виконується - рядок NOT JUMPING.
+Примітки:
+Вхідне число завжди додатнє
+Різниця між 9 та 0 не розцінюється як 1
+Всі числа, які складаються із однієї цифри - JUMPING*/
+function isJumping(number) {
+  let newStr = number.toString();
+  const newArray = newStr.split('');
+  if (newArray.length === 1) {
+  return 'JUMPING';
+  }
+  for(let t = 1; t < newArray.length; t += 1) {
+  let a1 = Number(newArray[t-1])-Number(newArray[t]);
+  let a2 = Number(newArray[t])-Number(newArray[t-1]);
+  if (a1 ===1 || a2 === 1 ) {
+    continue;
+  } else {
+    return 'NOT JUMPING';
+  }
+  }
+ return 'JUMPING';
+}

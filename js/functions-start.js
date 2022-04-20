@@ -350,8 +350,9 @@ function getTheLongestWord(words) {
 /*Напиши функцию filterArray(numbers, value), которая 
 принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers,
  которые больше чем значение параметра value (число).*/
+
 function filterArray(numbers, value) {
-   // Change code below this line
+ 
 const result = [];
 for(let i = 0; i < numbers.length; i += 1){
   if(numbers[i] > value) {
@@ -360,5 +361,5 @@ for(let i = 0; i < numbers.length; i += 1){
 }
  return result;
 
-  // Change code above this line
 }
+
