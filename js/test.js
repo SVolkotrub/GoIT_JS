@@ -1,12 +1,11 @@
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+ for (let i = 0; i <= max-min; i +=1){
+   numbers = numbers.push(min + i);
+ }
+  // Change code above this line
+  return numbers;
+}
 
-const statistic = '';
-let number = statistic.length;
-console.log(number);
-let percent = 0;
-  let count = 0;
-  for (let ones of statistic){
-    if (ones === '1'){
-      count += 1;
-    }
-  } 
-console.log('count ones ', count, 'all:', number, '  percent: ', Math.round((count / number) * 100) );
+console.log(createArrayOfNumbers(1, 3));

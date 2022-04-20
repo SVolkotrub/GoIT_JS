@@ -295,3 +295,70 @@ if (number !== 0) {
 } else { percent = 0;}
 return percent;
 }
+
+function getWordsLengths(words) {
+  
+  const result = [];
+  for (const word of words) {
+        const length = word.length;
+       result.push(length);
+  }
+  console.log(result);
+  return result;
+}
+
+// отримаємо [3, 3, 5, 4, 4]
+getWordsLengths(['one', 'two', 'three', 'four', 'five']);
+
+function makeArray(firstArray, secondArray, maxLength) {
+    const result = firstArray.concat(secondArray);
+let newRes = [];
+if (result.length > maxLength) {
+  newRes = result.slice(0, maxLength);
+  return newRes;
+}
+return result;
+
+}
+ /*Напиши функцию findLongestWord(string) которая принимает произвольную строку состоящую только 
+ из слов разделённых пробелом (параметр string) и возвращает самое длинное слово в этой строке.*/
+function findLongestWord(string) {
+  
+const array = string.split(" ");
+let theLongestWord = array[0];
+for (let i = 1; i < array.length; i += 1){
+  if (theLongestWord.length < array[i].length){
+    theLongestWord = array[i];
+  }
+}
+return theLongestWord;
+  
+}
+function getTheLongestWord(words) {
+  
+  let theLongest = words[0];
+  
+  for (let i = 1; i < words.length; i++) {
+    // якщо поточне слово довше theLongest
+    if (words[i].length >theLongest.length) {
+      // то зберігаємо його замість попереднього theLongest
+      theLongest = words[i];
+    }
+  }
+    return theLongest;
+}
+/*Напиши функцию filterArray(numbers, value), которая 
+принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers,
+ которые больше чем значение параметра value (число).*/
+function filterArray(numbers, value) {
+   // Change code below this line
+const result = [];
+for(let i = 0; i < numbers.length; i += 1){
+  if(numbers[i] > value) {
+    result.push(numbers[i]);
+  }
+}
+ return result;
+
+  // Change code above this line
+}
