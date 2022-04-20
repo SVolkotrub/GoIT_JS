@@ -108,3 +108,35 @@ statistic[2] = Math.floor(sum / testResults.length);
 return statistic;
 
 }
+ /*Роботи протестовані. Повільні роботи відправлені на апгрейд.
+  Mate Post хоче купити у нас десяток роботів для доставки вантажів 
+  по місту. Для цього їм потрібні роботи, які будуть переносити за 
+  день найбільшу сумарну вагу.
+
+Давай напишемо функцію compareRobots, яка приймає 2 масиви. Перший 
+масив firstRobotResults містить вагу кожного вантажу, який перевіз за
+ добу перший робот, другий secondRobotResults - відповідно вага
+  вантажів другого робота.
+
+Перевір, хто з роботів перевіз більшу вагу за день, та поверни рядок 
+з рекомендацією, кого з роботів варто купити*/
+
+function compareRobots(firstRobotResults, secondRobotResults) {
+  let sumFirstRobot = 0;
+  let sumSecondRobot = 0;
+  for (let i = 0; i < firstRobotResults.length; i += 1){
+    sumFirstRobot += firstRobotResults[i];
+  }
+   for (let i = 0; i < secondRobotResults.length; i += 1){
+    sumSecondRobot += secondRobotResults[i];
+  }
+  if (sumFirstRobot > sumSecondRobot){
+    return 'First robot for sale!';
+  }
+   if (sumFirstRobot < sumSecondRobot){
+    return 'Second robot for sale!';
+  }
+  if (sumFirstRobot === sumSecondRobot){
+    return 'Both robots for sale!';
+  }
+}
