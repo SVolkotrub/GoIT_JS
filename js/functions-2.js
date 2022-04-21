@@ -156,6 +156,34 @@ function splitString(str) {
   }
   return result;
 }
+/*Реалізуй функцію getArraysSum, яка приймає два масива чисел однакової довжини, та повертає суму усіх елементів цих масивів.*/
+function getArraysSum(arr1, arr2) {
+  let sum = 0;
+  
+  for (let i = 0; i < arr1.length; i += 1){
+    sum = sum + arr1[i] + arr2[i]; 
+  }
+  return sum;
+}
+/*Реалізуй функцію combineArrays, яка приймає 2 масиви чисел (first та second) та повертає масив чисел де N[i] це сума чисел first[i] та second[i].
+
+Примітки:
+
+Вхідні масиви завжди однакового розміру.
+Приклади:
+
+combineArrays([1, 2, 5], [3, 6, 1]) === [4, 8, 6]
+combineArrays([1], [6]) === [7]
+combineArrays([], []) === []*/
+function combineArrays(first, second) {
+  const result = [];
+  for (let i =0; i < first.length; i += 1){
+    result.push(first[i] + second[i]);
+
+  }
+  return result;
+}
+
 /*Створи функцію scrollingText, яка
 
 приймає рядок word;
@@ -247,3 +275,36 @@ function isJumping(number) {
   }
  return 'JUMPING';
 }
+/*Створи функцію checkNumber, яка приймає ціле число number і перевіряє його на три різні властивості:
+
+Це позитивне число?
+Це парне число?
+Це число кратне 10?
+Функція повинна повернути масив з результатами перевірок у вигляді булевих значень.*/
+function checkNumber(number) {
+  let isPositive;
+  let isEvenNumber;
+  let isDividedByTen;
+  const resultArray =[];
+  if (number > 0){
+    isPositive = true;
+  } else {
+    isPositive = false;
+  }
+  if (number % 2 === 0){
+    isEvenNumber = true;
+  } else {
+    isEvenNumber = false;
+  }
+  if (number % 10 === 0){
+    isDividedByTen = true;
+  } else {
+    isDividedByTen = false;
+  }
+  resultArray.push(isPositive);
+  resultArray.push(isEvenNumber);
+  resultArray.push(isDividedByTen);
+  return resultArray;
+}
+
+
